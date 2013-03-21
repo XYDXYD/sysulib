@@ -1,0 +1,78 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="mylib.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d" FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded" d:DesignHeight="696" d:DesignWidth="480">
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel 包含应用程序的名称和页标题-->
+        <Grid x:Name="TitlePanel" Margin="7,17,0,548" Grid.RowSpan="2">
+            <toolkit:ListPicker ManipulationStarted="listPicker_ManipulationStarted" BorderBrush="#33a9dd" Foreground="White" BorderThickness="4" Background="#33a9dd" Name="listPicker" Width="100" HorizontalAlignment="Left" Margin="6,118,0,-125" Height="169">
+                <toolkit:ListPickerItem Content="关键词" Name="keyWord"/>
+                <toolkit:ListPickerItem  Content="作者" Name="author"/>
+            </toolkit:ListPicker>
+            <StackPanel >
+                <TextBlock Text="掌上图书馆" Foreground="Gray" Style="{StaticResource PhoneTextNormalStyle}"/>
+                <TextBlock Text="图书查询" Foreground="Gray" Style="{StaticResource PhoneTextTitle1Style}" />
+            </StackPanel>
+        </Grid>
+
+        <TextBox InputScope="Chat" KeyUp="searchBox_KeyUp" Foreground="Black" Background="White" BorderThickness="2" BorderBrush="#33a9dd" Height="80" Margin="107,130,70,24" Name="searchBox" Text="" />
+        <Button BorderThickness="0" Content="" Height="80" Name="button5" Margin="390,130,0,24" Click="button5_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/mylib;component/Images/search.png" />
+            </Button.Background>
+        </Button>
+        <HyperlinkButton Background="#33a9dd" Content="高级搜索" Height="30" HorizontalAlignment="Left" Margin="350,218,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="133" Click="hyperlinkButton1_Click" Grid.RowSpan="2" />
+        <!--ContentPanel - 在此处放置其他内容-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,-8,12,0">
+            <ProgressBar Name="progressBar" Visibility="Collapsed" Height="30" Margin="0,-460,124,0" IsIndeterminate="True" />
+            <Button ManipulationStarted="button_ManipulationStarted" ManipulationCompleted="button1_ManipulationCompleted" BorderThickness="0" Content="" Height="230" Width="237" Name="button1" VerticalAlignment="Top" Margin="-12,22,231,0">
+                <Button.Background>
+                    <ImageBrush ImageSource="/mylib;component/Images/个人图书馆1.png" />
+                </Button.Background>
+            </Button>
+            <!-- <Button ManipulationStarted="button_ManipulationStarted" ManipulationCompleted="button2_ManipulationCompleted" Content="" BorderThickness="0" Height="230" HorizontalAlignment="Right" Margin="0,22,-12,0" Name="button2" VerticalAlignment="Top" Width="237" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/mylib;component/Images/图书推荐2.png" />
+                </Button.Background>
+            </Button>
+           <Button Content="" BorderThickness="0" Height="230" HorizontalAlignment="Left" Margin="-12,243,0,0" Name="button3" VerticalAlignment="Top" Width="237" ManipulationStarted="button_ManipulationStarted" ManipulationCompleted="button3_ManipulationCompleted">
+                <Button.Background>
+                    <ImageBrush ImageSource="/mylib;component/Images/咨询馆员.png" />
+                </Button.Background>
+            </Button>
+            <Button Content="" BorderThickness="0" ManipulationStarted="button_ManipulationStarted" ManipulationCompleted="button4_ManipulationCompleted" Height="230" HorizontalAlignment="Right" Margin="0,243,-12,0" Name="button4" VerticalAlignment="Top" Width="237" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/mylib;component/Images/帮助中心2.png" />
+                </Button.Background>
+            </Button>-->
+        </Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/mylib;component/Images/Background1.png" />
+        </Grid.Background>
+    </Grid>
+ 
+    <!--演示 ApplicationBar 用法的示例代码-->
+    <phone:PhoneApplicationPage.ApplicationBar >
+        <shell:ApplicationBar IsVisible="True" BackgroundColor="Gray" IsMenuEnabled="False">
+            <shell:ApplicationBarIconButton IconUri="/Images/user_white.png" Text="切换帐号" Click="ApplicationBarIconButton_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,98 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="mylib.View.BookMessage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot">
+        <!--枢轴控件-->
+        <controls:Pivot Foreground="Black">
+            <!--枢轴项一-->
+            <controls:PivotItem Header="详细信息" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="300"/>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="130*"/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="132" />
+                            <ColumnDefinition Width="325" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="87*" />
+                            <RowDefinition Height="57*" />
+                            <RowDefinition Height="57*" />
+                            <RowDefinition Height="57*" />
+                            <RowDefinition Height="57*" />
+                            <RowDefinition Height="0*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="书名 :  " Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="28"/>
+
+                        <ScrollViewer Grid.Column="1">
+                            <TextBlock Name="bookTxt" TextWrapping="Wrap"  VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="28" />
+                        </ScrollViewer>
+                        <TextBlock Text="作者 :  " Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="28"/>
+                        <TextBlock Name="authorTxt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="28" />
+
+                        <TextBlock Text="出版社 :  " Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="28"/>
+                        <TextBlock Name="publishTxt" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="28" />
+
+                        <TextBlock Text="索取号 :  " Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="28"/>
+                        <TextBlock Name="searchNumTxt" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="28" />
+
+                        <TextBlock Text="ISBN :  " Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="28"/>
+                        <TextBlock Name="isbnTxt" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="28" />
+                    
+                        
+                    </Grid>
+                    <Image Width="400" Height="325" Name="bookCover" Margin="0,15,0,28" Grid.Row="1" Grid.RowSpan="2" Stretch="Uniform" />
+                </Grid>
+            </controls:PivotItem>
+
+            <!--枢轴项二-->
+            <controls:PivotItem Header="图书简介">
+                <ScrollViewer Width="423" Grid.Row="2">
+                    <TextBlock Name="textblock1" TextWrapping="Wrap">
+
+                    </TextBlock>
+                </ScrollViewer>
+            </controls:PivotItem>
+            
+            <!--枢轴项二-->
+            <controls:PivotItem Header="馆藏状态">
+                <ListBox FontSize="20" Height="590" HorizontalAlignment="Left" Margin="10,10,0,0" Name="BookStatus" VerticalAlignment="Top" Width="437">
+                </ListBox>
+            </controls:PivotItem>
+
+        </controls:Pivot>
+        <Grid.Background>
+            <ImageBrush ImageSource="/mylib;component/Images/Background1.png" />
+        </Grid.Background>
+    </Grid>
+
+    <!--演示 ApplicationBar 用法的示例代码-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="appbar_button1" IconUri="/Images/appbar_button1.png" Text="按钮 1"/>
+            <shell:ApplicationBarIconButton x:Name="appbar_button2" IconUri="/Images/appbar_button2.png" Text="按钮 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="菜单项 1"/>
+                <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="菜单项 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
