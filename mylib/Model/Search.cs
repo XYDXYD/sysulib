@@ -94,7 +94,7 @@ namespace mylib.Model
             foreach (var i in returnResult.book_list)
             {
                 i.author = i.author.Replace("&rsquo;", "'").Replace("&quot;", "\"").Replace("&nbsp;", " ").Replace("&amp;", "&").Replace("&lt;", "<").Replace("&gt;", ">");
-                i.tittle = i.tittle.Replace("&rsquo;", "'").Replace("&quot;", "\"").Replace("&nbsp;", " ").Replace("&amp;", "&").Replace("&lt;", "<").Replace("&gt;", ">");
+                i.tittle = i.tittle.Replace("&rsquo;", "'").Replace("&quot;", "\"").Replace("&nbsp;", " ").Replace("&amp;", "&").Replace("&lt;", "<").Replace("&gt;", ">").Replace("&#38;","&");
                 i.publish = i.publish.Replace("&rsquo;", "'").Replace("&quot;", "\"").Replace("&nbsp;", " ").Replace("&amp;", "&").Replace("&lt;", "<").Replace("&gt;", ">");
             }
             Back(returnResult);

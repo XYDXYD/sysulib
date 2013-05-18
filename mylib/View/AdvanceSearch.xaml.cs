@@ -18,6 +18,7 @@ namespace mylib.View
         public AdvanceSearch()
         {
             InitializeComponent();
+            radioButton1.IsChecked = true;
         }
 
         string ChooseBas = "";
@@ -73,7 +74,7 @@ namespace mylib.View
        void PrintText1(object sender, SelectionChangedEventArgs args)
         {
             ListBoxItem lbi = ((sender as ListBox).SelectedItem as ListBoxItem);
-            Lange.Content = lbi.Content.ToString();
+            //Lange.Content = lbi.Content.ToString();
             ChooseLang = lbi.Content.ToString();
             language.Opacity = 0;
             language.Visibility = Visibility.Collapsed;
@@ -197,7 +198,7 @@ namespace mylib.View
            {
                if (searchBox.Text.Trim() != "")
                    NavigationService.Navigate(new Uri("/View/Result.xaml?request=" + HttpUtility.UrlEncode(searchBox.Text.Trim()) + "&find_code=" + classSelect +
-                 "&page_number=1&filter_code_1=WLN&filter_request_1=" + languageSelect + "&filter_code_2=WYR&filter_request_2=&filter_code_3=WYR&filter_request_3=&filter_code_4=WFM&filter_request_4=" + typeSelect + "&filter_code_5=WSL&filter_request_5=" + libSelect, UriKind.Relative));
+                 "&page_number=1&filter_code_1=WLN&filter_request_1=" + languageSelect + "&filter_code_2=WYR&filter_request_2=&filter_code_3=WYR&filter_request_3=&filter_code_4=WFM&filter_request_4=" + typeSelect + "&filter_code_5=WSL&filter_request_5=" + libSelect + "&local_base=" + "ZSU01", UriKind.Relative));
            }
            else if (radioButton2.IsChecked == true)
            {

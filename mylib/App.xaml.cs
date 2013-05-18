@@ -19,9 +19,9 @@ namespace mylib
 {
     public partial class App : Application
     {
-        static string[] _servers = new string[1];
-        static double[] _time = new double[1];
-        public static bool[] _died = new bool[1];
+        static string[] _servers = new string[2];
+        static double[] _time = new double[2];
+        public static bool[] _died = new bool[2];
         public static int _selectedIndex;
         /// <summary>
         ///提供对电话应用程序的根框架的轻松访问。
@@ -78,7 +78,7 @@ namespace mylib
 
         public static string ServerNow()
         {
-            /*double min = double.MaxValue;
+            double min = double.MaxValue;
             
             for (int i = 0; i < _time.Length; i++)
             {
@@ -88,8 +88,8 @@ namespace mylib
                     _selectedIndex = i;
                 }
             }
-            return _servers[_selectedIndex];*/
-            return _servers[0];
+            return _servers[_selectedIndex];
+            //return _servers[0];
         }
 
         public static void SetTime(double newTime)
@@ -106,22 +106,24 @@ namespace mylib
         {
             _selectedIndex = 0;
             _servers[0] = "http://appdev.sysu.edu.cn/~mad/10389233/lib/";//http://appdev.sysu.edu.cn/~mad/10389226/
-           // _servers[1] = "";//http://1.winphonexiang.sinaapp.com/mylib/
+            _servers[1] = "http://1.sysulib.sinaapp.com/mylib/";//http://1.winphonexiang.sinaapp.com/mylib///
            // _servers[2] = "";//http://ftpcxy.xindeke.com/
            // _servers[3] = "";//http://www.czxyh.org/cache/
 
             var settings = IsolatedStorageSettings.ApplicationSettings;
-            if (settings.Contains("time0"))
+            if (settings.Contains("time0") && settings.Contains("time1"))
             {
                 _time[0] = (double)settings["time0"];
-               // _time[1] = (double)settings["time1"];
+                _time[1] = (double)settings["time1"];
                // _time[2] = (double)settings["time2"];
                // _time[3] = (double)settings["time3"];
             }
             else
             {
+                if (!settings.Contains("time0"))
                 settings.Add("time0", 0);
-               // settings.Add("time1", 0);
+                if (!settings.Contains("time1"))
+                settings.Add("time1", 0);
                // settings.Add("time2", 0);
                // settings.Add("time3", 0);
                 for (int i = 0; i < _time.Length; i++)
@@ -151,7 +153,7 @@ namespace mylib
             if (settings.Contains("time0"))
             {
                 settings["time0"] = _time[0];
-              //  settings["time1"] = _time[1];
+                settings["time1"] = _time[1];
               //  settings["time2"] = _time[2];
                // settings["time3"] = _time[3];
             }

@@ -22,6 +22,13 @@
         <!--枢轴控件-->
         <controls:Pivot Foreground="Black">
             <!--枢轴项一-->
+            <controls:PivotItem Header="馆员推荐">
+                <ScrollViewer VerticalAlignment="Stretch">
+                    <ListBox SelectionChanged="commendList_SelectionChanged" Name="commendList" Height="640">
+
+                    </ListBox>
+                </ScrollViewer>
+            </controls:PivotItem>
             <controls:PivotItem Header="最新到馆">
                 <ScrollViewer VerticalAlignment="Stretch">
                     <ListBox SelectionChanged="newList_SelectionChanged" Name="newList" Height="640">
@@ -31,13 +38,7 @@
             </controls:PivotItem>
 
             <!--枢轴项二-->
-            <controls:PivotItem Header="馆员推荐">
-                <ScrollViewer VerticalAlignment="Stretch">
-                    <ListBox SelectionChanged="commendList_SelectionChanged" Name="commendList" Height="640">
-
-                    </ListBox>
-                </ScrollViewer>
-            </controls:PivotItem>
+            
 
         </controls:Pivot>
     </Grid>

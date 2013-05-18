@@ -19,9 +19,8 @@ namespace mylib.View
         public PivotPage1()
         {
             InitializeComponent();
-            Search search = new Search();
             Search search1 = new Search();
-            search.DownLoad("newbook.php", CallBack, "", "", "", "filter_code_1", "filter_request_1", "filter_code_2", "filter_request_2", "filter_code_3", "filter_request_3", "filter_code_4", "filter_request_4", "filter_code_5", "filter_request_5");
+            
             search1.DownLoad("commend.php", commendCallBack, "", "", "", "filter_code_1", "filter_request_1", "filter_code_2", "filter_request_2", "filter_code_3", "filter_request_3", "filter_code_4", "filter_request_4", "filter_code_5", "filter_request_5");
 
         }
@@ -54,6 +53,8 @@ namespace mylib.View
                 border.Child = sp;
                 commendList.Items.Add(border);
             }
+            Search search = new Search();
+            search.DownLoad("newbook.php", CallBack, "", "", "", "filter_code_1", "filter_request_1", "filter_code_2", "filter_request_2", "filter_code_3", "filter_request_3", "filter_code_4", "filter_request_4", "filter_code_5", "filter_request_5");
         }
 
         void CallBack(Search.Result result)

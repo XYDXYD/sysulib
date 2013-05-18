@@ -38,21 +38,21 @@
                 <ImageBrush ImageSource="/mylib;component/Images/search.png" />
             </Button.Background>
         </Button>
-        <HyperlinkButton Background="#33a9dd" Content="高级搜索" Height="30" HorizontalAlignment="Left" Margin="350,218,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="133" Click="hyperlinkButton1_Click" Grid.RowSpan="2" />
         <!--ContentPanel - 在此处放置其他内容-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,-8,12,0">
             <ProgressBar Name="progressBar" Visibility="Collapsed" Height="30" Margin="0,-460,124,0" IsIndeterminate="True" />
-            <Button ManipulationStarted="button_ManipulationStarted" ManipulationCompleted="button1_ManipulationCompleted" BorderThickness="0" Content="" Height="230" Width="237" Name="button1" VerticalAlignment="Top" Margin="-12,22,231,0">
+            <Button ManipulationStarted="button_ManipulationStarted" ManipulationCompleted="button1_ManipulationCompleted" BorderThickness="0" Content="" Height="230" Width="237" Name="button1" VerticalAlignment="Top" Margin="-5,96,224,0">
                 <Button.Background>
                     <ImageBrush ImageSource="/mylib;component/Images/个人图书馆1.png" />
                 </Button.Background>
             </Button>
-            <!-- <Button ManipulationStarted="button_ManipulationStarted" ManipulationCompleted="button2_ManipulationCompleted" Content="" BorderThickness="0" Height="230" HorizontalAlignment="Right" Margin="0,22,-12,0" Name="button2" VerticalAlignment="Top" Width="237" >
+           <Button ManipulationStarted="button_ManipulationStarted" ManipulationCompleted="button2_ManipulationCompleted" Content="" BorderThickness="0" Height="230" HorizontalAlignment="Right" Margin="0,96,-12,0" Name="button2" VerticalAlignment="Top" Width="237" >
                 <Button.Background>
                     <ImageBrush ImageSource="/mylib;component/Images/图书推荐2.png" />
                 </Button.Background>
             </Button>
-           <Button Content="" BorderThickness="0" Height="230" HorizontalAlignment="Left" Margin="-12,243,0,0" Name="button3" VerticalAlignment="Top" Width="237" ManipulationStarted="button_ManipulationStarted" ManipulationCompleted="button3_ManipulationCompleted">
+            <HyperlinkButton Background="#33a9dd" Content="高级搜索" Height="30" HorizontalAlignment="Left" Margin="335,8,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="133" Click="hyperlinkButton1_Click" />
+            <!--   <Button Content="" BorderThickness="0" Height="230" HorizontalAlignment="Left" Margin="-12,243,0,0" Name="button3" VerticalAlignment="Top" Width="237" ManipulationStarted="button_ManipulationStarted" ManipulationCompleted="button3_ManipulationCompleted">
                 <Button.Background>
                     <ImageBrush ImageSource="/mylib;component/Images/咨询馆员.png" />
                 </Button.Background>

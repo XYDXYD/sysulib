@@ -57,7 +57,7 @@ namespace mylib.View
             {
                 string result = e.Result;
                 //获取归还时间列表
-                Regex time = new Regex("<td class=td1 valign=top width=\"10%\">(.*)</td>");
+                Regex time = new Regex("<td class=td1 valign=top width=\"10%\">(\\d)*</td>");
                 MatchCollection time1 = time.Matches(result);
                 returnTime.Clear();
                 
